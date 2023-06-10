@@ -117,3 +117,165 @@ span:not(.btm-text-highlighted) {
   padding: 10px;
   pointer-events: none;
 }
+
+
+/*
+    INPUT FIELD EFFECTS SECTION
+*/
+input:focus ~ span,
+input:valid ~ span{
+    font-size: 10px;
+    transform: translateX(4px) translateY(-7px);
+    font-size: 0.80em;
+    padding: 0 6px;
+    color: var(--cyny-green);
+    background-color: var(--dusky-green);
+    color: white;
+    border-radius: 2px;
+}
+input:focus,
+input:focus-visible {
+    border: 1px solid  var(--green);
+    box-shadow: 0 0 5px rgb(0,0,0,.3);
+    outline: none;
+}
+input:valid {
+    border: 1px solid var(--green);  
+}
+
+
+/* 
+    ERROR PROMPTER SECTION
+*/
+.error {
+    color: rgb(255, 51, 51);
+    font-family: sans-serif;
+    font-weight: 500;
+    text-transform: none;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+
+/*
+    IMAGE ILLUSTRATION SECTION
+*/
+.image-container{
+    display: grid;
+    place-items: center;
+    background-color: var(--dusky-green);
+    color: white;
+}
+.image-container > img {
+    width: calc(90%);
+}
+.company, 
+.image-container > .quote {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-size: 19px;
+}
+.company {
+    font-size: 34px;
+    text-align: left;
+    height: 70px;
+    align-self: flex-start;
+    padding: 2% 0 0 5%;
+}
+.outro-overlay > .company{
+    position: absolute;
+    top: 0;
+}
+.mobile-btm-nav {
+    display: none;
+}
+
+
+/*
+    FORM NAVIGATION (FOR-MOBILE)
+*/
+.mobile-btm-nav {
+    text-decoration: none;
+    display: none;
+}
+.mobile-btm-nav > img {
+    transform: scale(.3) rotateZ(180deg);
+}
+
+
+/*
+    FLOATING ANIMATION FOR BOTTOM-NAV (FOR-MOBILE-VERSION)
+*/
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-10px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+/* .card-container {
+    display: none;
+} */
+
+
+/* 
+    GREETING SECTION (SHOWS AFTER SIGNING UP)
+*/
+.outro-overlay {
+    display: flex;
+    background-color: var(--dusky-green);
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    position: relative;
+}
+.outro-overlay > #signedUp-illustration {
+    height: 90%;
+    z-index: 2;
+}
+.outro-overlay > .shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    animation: 1.3s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideRight;
+    width: 150%;
+}
+.outro-overlay > .outro-greeting {
+    z-index: 3;
+    font-weight: 700;
+    letter-spacing: .02em;
+    word-spacing: .1em;
+}
+.disabled {
+    display: none ;
+}
+
+
+/*
+  SVG ANIMATION
+*/
+.slideUp-animation {
+    animation: 1.3s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0s;
+} 
+.slideRight-animation {
+    animation: 1.3s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideRight;animation-delay: 0s;
+}                             
+@keyframes slideUp {  
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: inherit;  }    
+}                    
+@keyframes slideRight {              
+    0% { opacity: 0; transform: translateX(30px); }                
+    100% { opacity: 1; transform: translateX(0);   }
+}
